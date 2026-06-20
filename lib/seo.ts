@@ -4,7 +4,7 @@ import { businessInfo } from "@/data/businessInfo";
 const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : undefined;
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? productionUrl ?? "https://essencesdart-albertville.fr";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || productionUrl || "https://essencesdart-albertville.fr";
 
 type SeoArgs = {
   title: string;
