@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Essences d'Art Albertville</title>
+  <desc id="desc">Architecture interieure, agencement sur mesure et art de vivre a Albertville.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset="0.55" stop-color="#d9c6a7"/>
+      <stop offset="1" stop-color="#203f33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1060" height="490" fill="#221f1b" opacity="0.78" rx="18"/>
+  <text x="110" y="215" fill="#fffaf1" font-family="Georgia, serif" font-size="86">Essences d'Art</text>
+  <text x="114" y="295" fill="#d9c6a7" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">ALBERTVILLE</text>
+  <text x="112" y="370" fill="#fffaf1" font-family="Arial, sans-serif" font-size="36">Architecture interieure, agencement sur mesure</text>
+  <text x="112" y="423" fill="#fffaf1" font-family="Arial, sans-serif" font-size="36">et art de vivre</text>
+  <circle cx="1005" cy="188" r="64" fill="#a92f6f" opacity="0.82"/>
+  <circle cx="1035" cy="458" r="44" fill="#b89b5e" opacity="0.72"/>
+</svg>
