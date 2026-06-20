@@ -25,6 +25,7 @@ type FormValues = z.infer<typeof schema>;
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -37,9 +38,24 @@ export function ContactForm() {
     }
   });
 
-  function onSubmit() {
-    setSent(true);
-    reset();
+  async function onSubmit(data: FormValues) {
+    setServerError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const json = await res.json() as { error?: string };
+        setServerError(json.error ?? "Une erreur est survenue.");
+        return;
+      }
+      setSent(true);
+      reset();
+    } catch {
+      setServerError("Impossible d'envoyer le message. Vérifiez votre connexion.");
+    }
   }
 
   return (
@@ -88,7 +104,8 @@ export function ContactForm() {
           <Send className="h-4 w-4" aria-hidden="true" />
           Envoyer ma demande
         </Button>
-        {sent ? <p className="text-sm font-medium text-pine">Merci, votre message est pret a etre traite.</p> : null}
+        {sent ? <p className="text-sm font-medium text-pine">Merci, votre message a bien été envoyé.</p> : null}
+        {serverError ? <p className="text-sm font-medium text-fuchsia">{serverError}</p> : null}
       </div>
     </form>
   );
