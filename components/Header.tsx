@@ -83,7 +83,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="min-h-[calc(100vh-5rem)] border-t border-ink/10 bg-chalk px-4 py-6 lg:hidden">
+        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-ink/10 bg-chalk px-4 py-6 lg:hidden">
           <nav className="mx-auto grid max-w-2xl gap-2" aria-label="Navigation mobile">
             {navigation.map((item) => (
               <div key={item.href} className="border-b border-ink/10 py-3">

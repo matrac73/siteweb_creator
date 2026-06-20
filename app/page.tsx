@@ -86,13 +86,24 @@ export default function HomePage() {
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {teaCategories.map((category) => (
-            <Link key={category.slug} href={category.href} className="group rounded-lg border border-ink/10 bg-chalk p-5 transition hover:-translate-y-1 hover:shadow-soft">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-fuchsia">Selection boutique</span>
-              <h3 className="mt-3 font-serif text-3xl text-ink">{category.name}</h3>
-              <p className="mt-3 text-sm leading-7 text-ink/68">{category.description}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-pine">
-                Decouvrir <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-              </span>
+            <Link key={category.slug} href={category.href} className="group overflow-hidden rounded-lg border border-ink/10 bg-chalk transition hover:-translate-y-1 hover:shadow-soft">
+              <div className="relative h-44 overflow-hidden">
+                <Image
+                  src={category.image}
+                  alt={category.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-fuchsia">Selection boutique</span>
+                <h3 className="mt-3 font-serif text-3xl text-ink">{category.name}</h3>
+                <p className="mt-3 text-sm leading-7 text-ink/68">{category.description}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-pine">
+                  Decouvrir <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                </span>
+              </div>
             </Link>
           ))}
         </div>

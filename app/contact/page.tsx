@@ -27,8 +27,8 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Parlons de votre projet"
         subtitle="Une idee, une contrainte, une envie de transformation : ecrivons ensemble la suite de votre interieur."
-        image="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=2200&q=86"
-        alt="Salon contemporain lumineux avec bois et matieres naturelles"
+        image="https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=2200&q=86"
+        alt="Interieur chalet savoyard avec poutres en bois et atmosphere montagne"
         primaryCta={{ label: "Appeler", href: businessInfo.phoneHref }}
       />
       <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
@@ -66,6 +66,19 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </Section>
+
+      <section aria-label="Localisation Essences d'Art Albertville" className="h-96 w-full">
+        <iframe
+          title="Essences d'Art — Localisation"
+          src="https://maps.google.com/maps?q=11+Chemin+de+la+Charrette%2C+73200+Albertville%2C+France&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </section>
     </>
   );
 }
