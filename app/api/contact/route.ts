@@ -150,7 +150,7 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: `"Essences d'Art – Contact" <${process.env.SMTP_USER}>`,
-      to: ["mathieu.ract@gmail.com", "frederique.morlat@gmail.com"],
+      to: ["mathieu.ract@adagiapartners.com"],
       replyTo: data.email,
       subject: `[Contact] ${data.firstName} ${data.lastName} — ${data.projectType}`,
       html,
