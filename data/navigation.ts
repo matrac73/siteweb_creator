@@ -36,6 +36,5 @@ export const navigation = [
       { label: "Et bien plus", href: "/realisations/et-bien-plus" }
     ]
   },
-  { label: "Revue de presse", href: "/revue-de-presse" },
-  { label: "Contact", href: "/contact" }
+  { label: "Revue de presse", href: "/revue-de-presse" }
 ] as const;
