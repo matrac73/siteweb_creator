@@ -61,8 +61,8 @@ export const teaCategories: TeaCategory[] = [
     name: "Mate",
     href: "/palais-des-thes/mate",
     description: "Une infusion de caractere, herbacee et tonique, issue d'une tradition de partage sud-americaine.",
-    image: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=1200&q=82",
-    alt: "Mate prepare dans une calebasse"
+    image: "https://images.unsplash.com/photo-1559749619-5f290507d5e6?auto=format&fit=crop&w=1200&q=82",
+    alt: "Mate en calebasse avec bombilla argentee"
   },
   {
     slug: "infusions",

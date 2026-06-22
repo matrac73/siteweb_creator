@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { CTASection } from "@/components/CTASection";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { Section } from "@/components/Section";
 import { projects } from "@/data/projects";
+import { transformations } from "@/data/transformations";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, imageGallerySchema } from "@/lib/schema";
 
@@ -35,6 +37,30 @@ export default function RealisationsPage() {
       <Section eyebrow="Galerie" title="Explorer les projets">
         <ProjectGallery />
       </Section>
+
+      {transformations.length > 0 && (
+        <Section
+          className="bg-chalk"
+          eyebrow="Transformations"
+          title="Avant / Après"
+          intro="Glissez le curseur pour mesurer l'étendue de chaque transformation — de l'espace brut à l'intérieur accompli."
+        >
+          <div className="grid gap-8 lg:grid-cols-2">
+            {transformations.map((t) => (
+              <BeforeAfterSlider
+                key={t.id}
+                beforeImage={t.beforeImage}
+                afterImage={t.afterImage}
+                beforeAlt={t.beforeAlt}
+                afterAlt={t.afterAlt}
+                title={t.title}
+                description={t.description}
+              />
+            ))}
+          </div>
+        </Section>
+      )}
+
       <CTASection title="Vous avez un projet similaire ? Parlons-en." cta="Prendre contact" />
     </>
   );
